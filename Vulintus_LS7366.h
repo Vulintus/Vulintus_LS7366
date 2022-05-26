@@ -67,6 +67,8 @@ class Vulintus_LS7366 {
 		Vulintus_LS7366(uint8_t cs_pin);                //Class constructor.
 		
 		//Functions.//
+        uint8_t begin(void); 				            //Initialization function.
+
         uint8_t status();                               //Read the status register.        
         int32_t read_count();                           //Read the counter register.
         void clear_count();                             //Clear the counter register.       
@@ -77,7 +79,7 @@ class Vulintus_LS7366 {
         void load_OTR();                                //Copy the counter register to the output register.
         int32_t read_OTR();                             //Read the output register.                 
 
-        void set_counter_size(uint8_t counter_size);    //Set the counter size.
+        void set_counter_size(uint8_t count_bytes);     //Set the counter size.
         void set_count_mode(uint8_t count_mode);        //Set the count mode.
 
 	private:
