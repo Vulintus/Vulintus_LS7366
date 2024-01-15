@@ -9,7 +9,7 @@
 */
 
 
-#include "Vulintus_LS7366R.h" 					    //Make sure to include the corresponding header file.
+#include "Vulintus_LS7366R.h" 		    //Make sure to include the corresponding header file.
 
 
 //Class constructor (default SPI with chip-select).
@@ -36,17 +36,17 @@ uint8_t Vulintus_LS7366R::begin(void)
     SPI.begin();                        //Initialize SPI communication.
     _counter_size = 4;                  //Set the default counter size to 4 bytes.
     _mdr0_val = 0;                      //Reset the mode register 0 value.
-    _mdr0_val |= LS7366R_QUADRX4;        //4x quadrature count mode (four counts per quadrature cycle).
-    _mdr0_val |= LS7366R_FREE_RUN;       //Free-running count mode.
-    _mdr0_val |= LS7366R_DISABLE_IDX;    //Disable index.
-    _mdr0_val |= LS7366R_ASYNC_IDX;      //Asynchronous Index.
-    _mdr0_val |= LS7366R_FILTER_1;       //Filter clock division factor = 1.
-    Vulintus_LS7366R::write_register(LS7366R_SEL_MDR0,_mdr0_val);    //Set mode register 0.
-    _mdr1_val = 0;                       //Reset the mode register 0 value.
-    _mdr1_val |= LS7366R_BYTE_4;         //4-byte counter mode.
-    _mdr1_val |= LS7366R_EN_CNTR;        //Enable counting.
-    _mdr1_val |= LS7366R_CY_FLAG;        //FLAG on CY (B7 of STR).
-    Vulintus_LS7366R::write_register(LS7366R_SEL_MDR1,_mdr1_val);    //Set mode register 1.
+    _mdr0_val |= LS7366R_QUADRX4;       //4x quadrature count mode (four counts per quadrature cycle).
+    _mdr0_val |= LS7366R_FREE_RUN;      //Free-running count mode.
+    _mdr0_val |= LS7366R_DISABLE_IDX;   //Disable index.
+    _mdr0_val |= LS7366R_ASYNC_IDX;     //Asynchronous Index.
+    _mdr0_val |= LS7366R_FILTER_1;      //Filter clock division factor = 1.
+    Vulintus_LS7366R::write_register(LS7366R_SEL_MDR0,_mdr0_val);   //Set mode register 0.
+    _mdr1_val = 0;                      //Reset the mode register 0 value.
+    _mdr1_val |= LS7366R_BYTE_4;        //4-byte counter mode.
+    _mdr1_val |= LS7366R_EN_CNTR;       //Enable counting.
+    _mdr1_val |= LS7366R_CY_FLAG;       //FLAG on CY (B7 of STR).
+    Vulintus_LS7366R::write_register(LS7366R_SEL_MDR1,_mdr1_val);   //Set mode register 1.
 }
 
 
