@@ -12,16 +12,8 @@
 #include "Vulintus_LS7366R.h" 		    //Make sure to include the corresponding header file.
 
 
-//Class constructor (default SPI with chip-select).
-Vulintus_LS7366R::Vulintus_LS7366R(uint8_t cs_pin)
-        : _cs_pin(cs_pin)
-{
-    _spi_bus = &SPI;                    //Use the default SPI bus.
-}
-
-
-//Class constructor (specified SPI with chip-select).
-Vulintus_LS7366R::Vulintus_LS7366R(SPIClass *spi_bus, uint8_t cs_pin)
+//Class constructor (SPI with chip-select).
+Vulintus_LS7366R::Vulintus_LS7366R(uint8_t cs_pin, SPIClass *spi_bus)
         : _cs_pin(cs_pin)
 {
     _spi_bus = spi_bus;                 //Use the specified SPI bus.

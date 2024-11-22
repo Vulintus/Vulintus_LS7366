@@ -78,8 +78,7 @@ class Vulintus_LS7366R {
 	public:
 
 		// Constructors.// 
-		Vulintus_LS7366R(uint8_t cs_pin);                       // Default SPI with chip-select.
-        Vulintus_LS7366R(SPIClass *spi_bus, uint8_t cs_pin);    // Specified SPI with chip-select.
+		Vulintus_LS7366R(uint8_t cs_pin, SPIClass *spi_bus = &SPI); // SPI with chip-select.
 		
 		// Functions.// 
         uint8_t begin(void); 				            // Initialization function.

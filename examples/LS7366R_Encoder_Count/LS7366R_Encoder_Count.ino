@@ -21,7 +21,7 @@
 
 // LS7366R quadrature decoder. //
 // Vulintus_LS7366R encoder = Vulintus_LS7366R(PIN_LS7366_CS);             // << Call this if using the default SPI bus.
-Vulintus_LS7366R encoder = Vulintus_LS7366R(&SPI, PIN_LS7366_CS);   // << Call this if using a specified SPI bus.
+Vulintus_LS7366R encoder = Vulintus_LS7366R(PIN_LS7366_CS, &SPI);   // << Call this if using a specified SPI bus.
 int32_t count;                          //Current encoder count.
 
 
