@@ -39,6 +39,7 @@ uint8_t Vulintus_LS7366R::begin(void)
     _mdr1_val |= LS7366R_EN_CNTR;       //Enable counting.
     _mdr1_val |= LS7366R_CY_FLAG;       //FLAG on CY (B7 of STR).
     Vulintus_LS7366R::write_register(LS7366R_SEL_MDR1,_mdr1_val);   //Set mode register 1.
+    return 0;                           //Return a success code.
 }
 
 
